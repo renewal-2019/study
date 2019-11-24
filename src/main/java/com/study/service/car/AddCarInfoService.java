@@ -79,17 +79,17 @@ public class AddCarInfoService implements IService<AddCarInfoReq, BaseRsp> {
 		carRecord.setTemEndDate(req.getTemEndDate());
 
 		// 判断是否有牌照
-		if (!carRecord.getLicenseId().equals("")) {// 有正式牌照
+		if (!"".equals(carRecord.getLicenseId())) {// 有正式牌照//tips:把引号放在前面,.equals防止空指针88  92 
 			carRecord.setHasLicense(Constants.YES);
 			carRecord.setHasTempLicense(Constants.NO);
 			carRecord.setTemLicense(null);
 			carRecord.setTemStartDate(null);
 			carRecord.setTemEndDate(null);
-		} else if (!carRecord.getTemLicense().equals("")) {// 无正式牌照但有临时牌照
+		} else if (!"".equals(carRecord.getTemLicense())) {// 无正式牌照但有临时牌照
 			carRecord.setHasLicense(Constants.NO);
 			carRecord.setHasTempLicense(Constants.YES);
 			carRecord.setLicenseId(null);
-			if (!carRecord.getTemStartDate().equals("") && !carRecord.getTemEndDate().equals("")) {
+			if (!"".equals(carRecord.getTemStartDate()) && !"".equals(carRecord.getTemEndDate())) {
 				validDateFormat(carRecord);
 			} else {
 				throw new BaseException(9999);
@@ -107,7 +107,7 @@ public class AddCarInfoService implements IService<AddCarInfoReq, BaseRsp> {
 	 * 
 	 * @throws BaseException
 	 */
-	void validDateFormat(CarRecord carRecord) throws BaseException {
+	private void validDateFormat(CarRecord carRecord) throws BaseException {//tips:定义方法时尽量不要用default
 		String temStartDate = carRecord.getTemStartDate();
 		String temEndDate = carRecord.getTemEndDate();
 		SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");

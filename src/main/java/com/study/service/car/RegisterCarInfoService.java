@@ -70,7 +70,7 @@ public class RegisterCarInfoService implements IService<RegisterCarInfoReq, Base
 	/**
 	 * 将carCompInfo信息添加到a_car_component表中
 	 */
-	int addCarCompInfoToTable(CarCompInfo carCompInfo, Long staffId, Long carId) {
+	private int addCarCompInfoToTable(CarCompInfo carCompInfo, Long staffId, Long carId) {//tips:方法修饰符,注释要全,包括参数注释
 
 		CarComponent carComponent = new CarComponent();
 		BeanUtils.copyProperties(carCompInfo, carComponent);
@@ -98,9 +98,5 @@ public class RegisterCarInfoService implements IService<RegisterCarInfoReq, Base
 
 		return rigster;
 	}
-
-	/**
-	 * 
-	 */
 
 }

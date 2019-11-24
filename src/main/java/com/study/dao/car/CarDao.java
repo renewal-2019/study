@@ -28,22 +28,22 @@ public interface CarDao {
 	/**
 	 * 根据牌照号查询carId ==> a_car_info 表
 	 */
-	Long selectCarIdByLicense(@Param("licenseId") String licenseId, @Param("temLicense") String temLicense);
+	public Long selectCarIdByLicense(@Param("licenseId") String licenseId, @Param("temLicense") String temLicense);
 	
 	/**
 	 * 根据客户名查询客户id 
 	 */
-	Long selectConsumerIdByName(@Param("consumerName")String consumerName);
+	public Long selectConsumerIdByName(@Param("consumerName")String consumerName);
 	
 	/**
 	 * 根据carNO查询carId
 	 */
-	Long searchCarIdByCarNo(@Param("carNo") String carNo);
+	public Long searchCarIdByCarNo(@Param("carNo") String carNo);
 	
 	/**
 	 * 根据车牌号查找车辆原始信息
 	 */
-	CarRecord selectOneCarRecordByLicense(@Param("license") String license);
+	public CarRecord selectOneCarRecordByLicense(@Param("license") String license);
 	
 	/**
 	 * 添加部件信息 ==> a_car_component 表
@@ -68,7 +68,7 @@ public interface CarDao {
 	/**
 	 * 根据carId, component,修理时间为null,查询修理表
 	 */
-	CarRepair selectCarRepairInfo(@Param("carId")Long carId, @Param("component")String component);
+	public CarRepair selectCarRepairInfo(@Param("carId")Long carId, @Param("component")String component);
 	
 	/**
 	 * 根据carid删除carInfo
@@ -88,16 +88,16 @@ public interface CarDao {
 	/**
 	 * 根据carNo模糊查询车辆信息
 	 */
-	List<CarInfoOfOne> selectCarInfoByCarNo(@Param("carNo")String carNo);
+	public List<CarInfoOfOne> selectCarInfoByCarNo(@Param("carNo")String carNo);
 	
 	/**
 	 * 根据repairId主键查询carrepair表
 	 */
-	CarRepair selectCarRepairInfoByRepairId(@Param("repairId") Long repairId);
+	public CarRepair selectCarRepairInfoByRepairId(@Param("repairId") Long repairId);
 	
 	/**
 	 * 根据carId查询a_car_component 和 a_car_info 表
 	 */
-	CarAndComponent selectCarAndComponentByCarId(@Param("carId")Long carId);
+	public CarAndComponent selectCarAndComponentByCarId(@Param("carId")Long carId);
 	
 }

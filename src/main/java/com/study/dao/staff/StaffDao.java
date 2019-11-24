@@ -19,11 +19,11 @@ public interface StaffDao {
 	/**
 	 * 根据工号查询员工详细信息
 	 */
-	Staff selectStaffByJobNumber(@Param("jobNumber")Long jobNumber);
+	public Staff selectStaffByJobNumber(@Param("jobNumber")Long jobNumber);
 	
 	/**
 	 * 根据工号查询员工id
 	 */
-	Long searchStaffIdByJobNumber(@Param("jobNumber")Long jobNumber);
+	public Long searchStaffIdByJobNumber(@Param("jobNumber")Long jobNumber);
 
 }

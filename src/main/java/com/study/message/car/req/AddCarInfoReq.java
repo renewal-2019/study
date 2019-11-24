@@ -30,7 +30,7 @@ public class AddCarInfoReq extends BaseReq implements IOperationReq{
 	
 	@Override
 	public String getBusType() {
-		return BusType.ADD;
+		return BusType.CAR;
 	}
 	
 	@Override

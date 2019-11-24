@@ -21,7 +21,7 @@ public class DeleteCarInfoReq extends BaseReq implements IOperationReq{
 	
 	@Override
 	public String getBusType() {
-		return BusType.DELETE;
+		return BusType.CAR;
 	}
 	
 	@Override

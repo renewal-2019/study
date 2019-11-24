@@ -24,7 +24,7 @@ public class AddCarRepairInfoReq extends BaseReq implements IOperationReq{
 	
 	@Override
 	public String getBusType() {
-		return BusType.ADD;
+		return BusType.CAR;
 	}
 	
 	@Override
